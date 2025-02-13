@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Ecoverse</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #2d3748;
+        }
+        .job-section {
+            background-color: #f7fafc;
+            padding: 80px 0;
+        }
+        .job-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .job-list div {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .job-list div:hover {
+            background-color: #48bb78;
+            color: white;
+            transform: scale(1.05);
+        }
+        .job-list div h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .job-list div p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .apply-button {
+            background-color: #2f855a; /* Darker green */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .apply-button:hover {
+            background-color: #276749; /* Even darker green */
+        }
+        @media (max-width: 768px) {
+            .job-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-green-500 to-green-400 text-white py-16 text-center">
+        <h1 class="text-5xl font-extrabold">Join Our Team</h1>
+        <p class="mt-4 text-lg opacity-90">Explore exciting career opportunities at Ecoverse</p>
+    </header>
+
+    <!-- Job Openings Section -->
+    <section class="job-section">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-10">Current Job Openings</h2>
+            <div class="job-list">
+                <!-- Job 1 -->
+                <div class="job">
+                    <h2>Tree Conservation Specialist</h2>
+                    <p>Preserve ancient and rare tree species by developing conservation strategies and collaborating with local communities.</p>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job">
+                    <h2>Environmental Scientist</h2>
+                    <p>Conduct research on biodiversity and assist in developing sustainable practices for tree plantation and care.</p>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job">
+                    <h2>Marketing Manager</h2>
+                    <p>Lead our green marketing initiatives, promote awareness of environmental conservation, and engage with our community.</p>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="job">
+                    <h2>Plant Nursery Manager</h2>
+                    <p>Oversee plant care and management, ensuring the health and quality of our plants before they reach our customers.</p>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+
+                <!-- Job 5 -->
+                <div class="job">
+                    <h2>Sales Executive</h2>
+                    <p>Drive sales of our plant products, build relationships with customers, and help them find the perfect plants for their needs.</p>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+
+                <!-- Job 6 -->
+                <div class="job">
+                    <h2>Customer Support Specialist</h2>
+                    <p>Provide excellent customer service and assist clients with inquiries about our products and services.</p>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <p class="text-sm">&copy; 2024 Ecoverse. All rights reserved.</p>
+        <div class="flex justify-center space-x-6 mt-4">
+            <a href="https://www.facebook.com/shafinahmed.shafin.7" class="text-green-300 hover:text-green-400">Facebook</a>
+            <a href="https://www.instagram.com/krishanuabir/" class="text-green-300 hover:text-green-400">Instagram</a>
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2Fafnanshahriar27" class="text-green-300 hover:text-green-400">Twitter</a>
+        </div>
+    </footer>
+
+</body>
+</html>

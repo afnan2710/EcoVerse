@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultant Login</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(bgimage.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            display: flex;
+            background-color: #3B7D1F;
+            border-radius: 8px;
+            box-shadow: 14px 14px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 650px;
+        }
+        .logo {
+            background-color: white;
+            padding: 20px;
+            width: 37%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo img {
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        .login-box {
+            padding: 40px;
+            width: 60%;
+            color: white;
+        }
+        .toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .toggle button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+            color: white;
+        }
+        .toggle button.active {
+            background-color: white;
+            color: #00a65a;
+        }
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        label {
+            font-size: 16px;
+            color: white;
+        }
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        button[type="submit"] {
+            background-color: white;
+            color: #007d3c;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            width: 110px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            align-self: center;
+            margin-top: 20px;
+        }
+        button[type="submit"]:hover {
+            background-color: skyblue;
+        }
+        .signup {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+        .signup a {
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .signup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <a href="index.php"><img src="EcoVerse_Logo.png" alt="EcoVerse Logo"></a>
+        </div>
+        <div class="login-box">
+            <div class="toggle">
+                <button id="userBtn">User</button>
+                <button id="specialistBtn" class="active">Consultant</button>
+                <button id="adminBtn">Admin</button>
+            </div>
+            <div id="user_login" style="display: none;">
+                <h2>Welcome to EcoVerse!!!</h2>
+                <form action="login.php" method="post">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <div class="signup">
+                    New to EcoVerse? <a href="register.html">Sign up</a>
+                </div>
+            </div>
+            <div id="admin_login" style="display: none;">
+                <h2>Admin Panel</h2>
+                <form action="admin-login.php" method="post">
+                    <label for="admin_email">Email</label>
+                    <input type="email" id="admin_email" name="admin_email" placeholder="example@admin.ecoverse.com" required>
+                    <label for="admin_password">Password</label>
+                    <input type="password" id="admin_password" name="admin_password" placeholder="Password" required>
+                    <button type="submit">Admin Login</button>
+                </form>
+                <div class="signup">
+                    <a href="admin-forgetPassword.php">Forgot Password?</a>
+                </div>
+            </div>
+            <div id="specialist_login">
+                <h2>Tree Specialist Login</h2>
+                <form action="consultant-login.php" method="post">
+                    <label for="consultant_email">Email</label>
+                    <input type="email" id="consultant_email" name="consultant_email" placeholder="example@consultant.ecoverse.com" required>
+                    <label for="consultant_password">Password</label>
+                    <input type="password" id="consultant_password" name="consultant_password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const userBtn = document.getElementById('userBtn');
+        const adminBtn = document.getElementById('adminBtn');
+        const specialistBtn = document.getElementById('specialistBtn');
+        const user_login = document.getElementById('user_login');
+        const admin_login = document.getElementById('admin_login');
+        const specialist_login = document.getElementById('specialist_login');
+        userBtn.addEventListener('click', () => {
+            user_login.style.display = 'block';
+            admin_login.style.display = 'none';
+            specialist_login.style.display = 'none';
+            userBtn.classList.add('active');
+            adminBtn.classList.remove('active');
+            specialistBtn.classList.remove('active');
+        });
+        adminBtn.addEventListener('click', () => {
+            admin_login.style.display = 'block';
+            user_login.style.display = 'none';
+            specialist_login.style.display = 'none';
+            adminBtn.classList.add('active');
+            userBtn.classList.remove('active');
+            specialistBtn.classList.remove('active');
+        });
+        specialistBtn.addEventListener('click', () => {
+            specialist_login.style.display = 'block';
+            user_login.style.display = 'none';
+            admin_login.style.display = 'none';
+            specialistBtn.classList.add('active');
+            userBtn.classList.remove('active');
+            adminBtn.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp to EcoVerse</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(bgimage.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            background-color: #3B7D1F;
+            border-radius: 8px;
+            box-shadow: 14px 14px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 400px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        label {
+            text-align: left;
+            font-size: 16px;
+            color: white;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="date"] {
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        input[type="file"] {
+            padding: 5px;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        select {
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 20px;
+        }
+        input, select {
+            padding: 12px 20px;
+        }
+        button[type="submit"] {
+            background-color: white;
+            color: #007d3c;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            width: 100px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            align-self: center;
+            margin-top: 20px;
+            width: 40%;
+        }
+        button[type="submit"]:hover {
+            background-color: skyblue;
+        }
+        .signup {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+        .signup a {
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .signup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register to EcoVerse</h2>
+        <form action="register.php" method="post" enctype="multipart/form-data">
+            <label for="email">Email (required)</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <label for="firstname">First Name (required)</label>
+            <input type="text" id="firstname" name="firstname" placeholder="First name" required>
+            <label for="lastname">Last Name (optional)</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+            <label for="phone">Contact Number (required)</label>
+            <input type="tel" id="phone" name="phone" pattern="\+880[0-9]{10}" placeholder="+880" required>
+            <label for="gender">Gender (optional)</label>
+            <select id="gender" name="gender">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+            </select>
+            <label for="dob">Date of Birth (optional)</label>
+            <input type="date" id="dob" name="dob">
+            <label for="address">Address (required)</label>
+            <input type="text" id="address" name="address" placeholder="Please write your full address" required>
+            <label for="profilePhoto">Profile Photo (optional)</label>
+            <input type="file" id="profilePhoto" name="profilePhoto">
+            <label for="password">Password (required)</label>
+            <input type="password" id="password" name="password" required>
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" id="confirmpassword" name="confirmpassword" required>
+            <button type="submit">Register</button>
+        </form>
+        <div class="signup">
+            Already a Member? <a href="login.html">Sign in</a>
+        </div>
+    </div>
+</body>
+</html>
